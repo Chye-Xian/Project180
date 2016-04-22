@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-   background-color: #262634;
+   background-color: #152534;
 }
 
 #intro {
-   background-color: #444444;
+   background-color: #334444;
 }
 
 #project-list {

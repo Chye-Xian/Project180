@@ -1,4 +1,6 @@
 Project180::Application.routes.draw do
+  get "montyhall/index"
+  get "montyhall/choice"
   #get "main/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
