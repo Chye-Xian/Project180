@@ -3,9 +3,11 @@
 <div id ="intro">
 <p>Choose one of these three doors, one has a pumpkin in it the others have a stick</p>
 
-<%= link_to image_tag "montyhall/door_#{rand(4)}.jpeg", montyhall_choice_path %>
-<%= link_to image_tag "montyhall/door_#{rand(4)}.jpeg", montyhall_choice_path %>
-<%= link_to image_tag "montyhall/door_#{rand(4)}.jpeg", montyhall_choice_path %>
+<%= form_tag montyhall_choice_path do%>
+<%= image_submit_tag("montyhall/door_#{rand(4)}.jpeg", id: "number1") %>
+<%= image_submit_tag("montyhall/door_#{rand(4)}.jpeg", id: "number2") %>
+<%= image_submit_tag("montyhall/door_#{rand(4)}.jpeg", id: "number3") %>
+<% end %>
 </div>
 
 
