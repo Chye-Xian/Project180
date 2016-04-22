@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 html {
-   background-color: #252534;
+   background-color: #262634;
 }
 
 #intro {
