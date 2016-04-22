@@ -1,0 +1,8 @@
+<h1>Project180</h1>
+
+<p> Project180 is a thing I wanted to do to improve my rails, javascript and HTML skills. I've taken the idea from Jennifer Dewalt's <a href="https://jenniferdewalt.com/">180 websites in 180 days</a> but instead of on a per day basis I'll just be doing 180 projects as I'm only doing this 1 hour a day.
+
+<h3>Projects so far</h3>
+<ul>
+    <li><%= link_to "Index", main_index_path %></li>
+</ul>
