@@ -4,8 +4,10 @@ one:
   name: MyString
   image: MyString
   contents: MyString
+  game_id: 
 
 two:
   name: MyString
   image: MyString
   contents: MyString
+  game_id: 

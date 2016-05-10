@@ -4,6 +4,7 @@ class CreateDoors < ActiveRecord::Migration
       t.string :name
       t.string :image
       t.string :contents
+      t.references :game, index: true
 
       t.timestamps
     end
