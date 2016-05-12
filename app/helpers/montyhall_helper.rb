@@ -7,8 +7,8 @@ module MontyhallHelper
     else
       object = "stick" 
       contents["stick"] += 1
-      
     end
-    return Door.new(name: name, image: "montyhall/door_#{rand(4)}.jpeg", contents: object)
+    something = Hash[name: name, image: "montyhall/door_#{rand(4)}.jpeg", contents: object]
+    return something
   end
 end

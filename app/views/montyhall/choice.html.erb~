@@ -2,7 +2,7 @@
 <p>Find me in app/views/montyhall/choice.html.erb</p>
 
 <%= form_tag montyhall_choice_path do%>
-  <% @game.doors.each do |door| %>
+  <% @@game.doors.each do |door| %>
     <%= image_submit_tag(door.image, id: door.name) %>
   <% end %> 
 <% end %>

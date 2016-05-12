@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160422172447) do
+ActiveRecord::Schema.define(version: 20160510065348) do
 
   create_table "doors", force: true do |t|
     t.string   "name"
     t.string   "image"
     t.string   "contents"
+    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "doors", ["game_id"], name: "index_doors_on_game_id"
 
   create_table "games", force: true do |t|
-    t.integer  "door_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "games", ["door_id"], name: "index_games_on_door_id"
 
 end
