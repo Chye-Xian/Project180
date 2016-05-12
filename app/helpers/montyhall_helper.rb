@@ -13,7 +13,6 @@ module MontyhallHelper
   end
 
   def choose_other_door(door_id, game)
-    #still something wrong
     picked_door = Door.find(door_id)
     door_list = Array.new
     @game.doors.each do |door|

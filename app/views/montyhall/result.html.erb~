@@ -1,0 +1,12 @@
+<h1>Monty Hall problem</h1>
+
+<div id ="intro">
+<p>This is what you have chosen<%= @result %>hopefully</p>
+
+<%= form_tag montyhall_choice_path do%>
+  <%= hidden_field_tag("game", @game.id) %>
+  <% @game.doors.each do |door| %>
+    <%= image_submit_tag(door.image, id: door.id, name: door.id, value: door.id) %>
+  <% end %> 
+<% end %>
+</div>

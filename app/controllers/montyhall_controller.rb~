@@ -15,6 +15,10 @@ class MontyhallController < ApplicationController
     #well actually its a goat regardless so no need
     @door_id = params.keys.find {|k| k.include? ".y"}
     @door_id = @door_id.chomp(".y")
-    @open_door = Door.find(choose_other_door(@door_id, @game))
+    @open_door = choose_other_door(@door_id, @game)
+  end
+
+  def result
+    @result = params.to_s
   end
 end

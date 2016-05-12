@@ -17,4 +17,10 @@ class MontyhallController < ApplicationController
     @door_id = @door_id.chomp(".y")
     @open_door = choose_other_door(@door_id, @game)
   end
+
+  def result
+    @result = params.to_s
+    @game = Game.find(params[:game])
+    @open_door = Door.find(params[:open_door])
+  end
 end
