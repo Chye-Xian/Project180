@@ -4,9 +4,9 @@
 <p>Choose one of these three doors, one has a pumpkin in it the others have a stick</p>
 
 <%= form_tag montyhall_choice_path do%>
-  <%= hidden_field_tag("game", @game) %>
+  <%= hidden_field_tag("game", @game.id) %>
   <% @game.doors.each do |door| %>
-    <%= image_submit_tag(door.image, id: door.name) %>
+    <%= image_submit_tag(door.image, id: door.id) %>
   <% end %> 
 <% end %>
 </div>

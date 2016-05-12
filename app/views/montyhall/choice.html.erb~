@@ -1,8 +1,13 @@
 <h1>Montyhall#choice</h1>
-<p>Find me in app/views/montyhall/choice.html.erb</p>
-
+<p>Interesting choice. I have opened one door that contains a stick. You now have one change to find the pumpkin.</p>
+<p>Do you want to stick to the door you chose or swap?</p>
 <%= form_tag montyhall_choice_path do%>
-  <% @@game.doors.each do |door| %>
-    <%= image_submit_tag(door.image, id: door.name) %>
+  <% @game.doors.each do |door| %>
+    <% if door.id == @open_door.id %>
+      <%= image_tag("montyhall/stick_1.jpg", id: door.id) %>
+    <% else %>
+      <%= image_tag(door.image, id: door.id) %>
+      <%= door.id == (@door_id.to_i) ? submit_tag("Keep", id: "keep") : submit_tag("Swap", id: "swap") %>
+    <% end %>
   <% end %> 
 <% end %>

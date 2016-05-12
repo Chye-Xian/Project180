@@ -10,5 +10,11 @@ class MontyhallController < ApplicationController
 
   def choice
     @game = Game.find(params[:game])
+    #perhaps change the content string to the image path
+    #of the content?
+    #well actually its a goat regardless so no need
+    @door_id = params.keys.find {|k| k.include? ".y"}
+    @door_id = @door_id.chomp(".y")
+    @open_door = choose_other_door(@door_id, @game)
   end
 end
