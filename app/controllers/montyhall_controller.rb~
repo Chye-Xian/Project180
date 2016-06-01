@@ -20,5 +20,10 @@ class MontyhallController < ApplicationController
 
   def result
     @result = params.to_s
+    @game = Game.find(params[:game])
+    @door_set = {
+      open_door => params[:open_door],
+      swap_door => params[:swap_door],
+      keep_door => params[:swap_door]
   end
 end

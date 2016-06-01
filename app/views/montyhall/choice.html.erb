@@ -1,17 +1,19 @@
 <h1>Montyhall#choice</h1>
-<p>Interesting choice. I have opened one door that contains a stick. You now have one change to find the pumpkin.</p>
+<p>Interesting choice. I have opened one door that contains a stick. You now have one chance to find the pumpkin.</p>
 <p>Do you want to stick to the door you chose or swap?</p>
 <%= form_tag montyhall_result_path do%>
   <%= hidden_field_tag("game", @game.id) %>
   <% @game.doors.each do |door| %>
     <% if door.id == @open_door.id %>
       <%= hidden_field_tag("open_door", door.id) %>
-      <%= image_tag("montyhall/stick_1.jpg", id: door.id) %>
+      <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
+      <%= door.contents %>
     <% else %>
       <%= image_tag(door.image, id: door.id) %>
       <% door.id == (@door_id.to_i) ? (lable = "keep") : (lable = "swap") %>
       <%= submit_tag(lable.camelize, id: lable) %>
       <%= hidden_field_tag("#{lable}_door", door.id) %>
+      <%= door.contents %>
     <% end %>
   <% end %> 
 <% end %>
