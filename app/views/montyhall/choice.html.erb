@@ -1,6 +1,10 @@
+<div id="box">
 <h1>Montyhall#choice</h1>
+<div id="intro">
 <p>Interesting choice. I have opened one door that contains a stick. You now have one chance to find the pumpkin.</p>
 <p>Do you want to stick to the door you chose or swap?</p>
+</div>
+<div id="main">
 <%= form_tag montyhall_result_path do%>
   <%= hidden_field_tag("game", @game.id) %>
   <% @game.doors.each do |door| %>
@@ -15,3 +19,5 @@
     <% end %>
   <% end %> 
 <% end %>
+</div>
+</div>

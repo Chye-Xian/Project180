@@ -1,14 +1,17 @@
+<div id="box">
 <h1>Monty Hall problem</h1>
 
 <div id ="intro">
 <p>Choose one of these three doors, one has a pumpkin in it the others have a stick</p>
-
+</div>
+<div id="main">
 <%= form_tag montyhall_choice_path do%>
   <%= hidden_field_tag("game", @game.id) %>
   <% @game.doors.each do |door| %>
     <%= image_submit_tag(door.image, id: door.id, name: door.id, value: door.id) %>
   <% end %> 
 <% end %>
+</div>
 </div>
 
 

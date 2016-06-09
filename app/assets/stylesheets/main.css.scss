@@ -1,13 +1,27 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// background-color: #152534;
 
-html {
-   background-color: #152534;
+#box {
+   background-color: #1f2f3e;
+   font-family: "Verdana", sans-serif;
+   padding: 5px;
+   margin: auto;
+   text-align: center;
+   
 }
 
 #intro {
    background-color: #334444;
+   padding: 0px 10px 0px 10px;
+   margin: 2px;
+}
+
+#main {
+   background-color: #536464;
+   padding: 10px;
+   margin: 2px;
 }
 
 #project-list {

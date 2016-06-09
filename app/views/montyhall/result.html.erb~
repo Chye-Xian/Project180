@@ -1,8 +1,9 @@
 <h1>Monty Hall problem</h1>
 <div id ="intro">
 <p>This is what you have chosen</p>
+</div>
+<div id="main">
 <% @game.doors.each do |door| %>
-  <%= @door_set[door.id] %>
   <% case @door_set[door.id] %>
   <% when "keep_door", "swap_door"%>
     <% if is_picked_door(params["commit"], @door_set[door.id]) %>

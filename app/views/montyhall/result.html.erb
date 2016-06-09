@@ -1,6 +1,9 @@
+<div id="box">
 <h1>Monty Hall problem</h1>
 <div id ="intro">
 <p>This is what you have chosen</p>
+</div>
+<div id="main">
 <% @game.doors.each do |door| %>
   <% case @door_set[door.id] %>
   <% when "keep_door", "swap_door"%>
@@ -13,4 +16,5 @@
     <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
   <% end %>
 <% end %>
+</div>
 </div>
