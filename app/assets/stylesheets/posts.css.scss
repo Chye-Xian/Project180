@@ -1,3 +1,87 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#box {
+   background-color: #1f2f3e;
+   font-family: "Verdana", sans-serif;
+   padding: 5px;
+   margin: auto;
+   text-align: center;
+}
+
+#intro {
+   background-color: #334444;
+   padding: 0px 10px 0px 10px;
+   margin: 2px;
+}
+
+#main {
+   background-color: #536464;
+   padding: 10px;
+   margin: 2px;
+}
+
+#footer {
+   text-align: left;
+}
+
+a:link {
+   color: grey;
+   text-decoration: none;
+}
+
+a:hover {
+   color: white;
+   text-decoration: none;
+}
+
+a:visited {
+   color: grey;
+}
+
+a {
+  color: grey;
+  text-decoration: none;
+  &:visited {
+    color: grey;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+#project-list {
+   background-color: #536464;
+   text-align: left;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
