@@ -2,18 +2,34 @@ module MontyhallHelper
   @@contents = Game.get_contents
   def populate_door(name)
     ##contents = Game.get_contents
-    if @@contents["stick"] == 2 || (rand(3) == 0 && @@contents["pumpkin"] == 0) 
+    ##the original if statement isn't robust enough 
+    ##as it allows pumpkin in even after pumpkin > 0
+    ##this is when stick == 2 so if someone just refreshes 
+    ##it stays in session rather than reseting
+    ##could start it by saying if stick==2 && pumpkin==1 reset
+    if @@contents["stick"] == 2 && @@contents["pumpkin"] == 1
+      @@contents["stick"] = 0
+      @@contents["pumpkin"] = 0
+    end
+    if @@contents["stick"] == 2 || (rand(3) == 0 && @@contents["pumpkin"] == 0)
+      puts "pumpkin" 
       object = "pumpkin"
-      @@contents["pumpkin"] = 1
+      @@contents["pumpkin"] += 1
     else
       if @@contents["stick"] == 1
+        puts "stick_2"
         object = "stick_2" 
       else
+        puts "stick_1"
         object = "stick_1"
       end
       @@contents["stick"] += 1
     end
-
+    puts "-----------------"
+    puts 
+    puts @@contents["stick"]
+    puts @@contents["pumpkin"]
+    puts "-----------------"
     something = Hash[name: name, image: "montyhall/door_#{rand(4)}.jpeg", contents: object]
     return something
   end
@@ -34,6 +50,7 @@ module MontyhallHelper
   end
 
   def is_picked_door(picked_door, other_door)
+      other_door = other_door.chomp("_door").capitalize
     return picked_door == other_door
   end
 end

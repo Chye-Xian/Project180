@@ -1,10 +1,13 @@
 module MontyhallHelper
   @@contents = Game.get_contents
   def populate_door(name)
-    ##contents = Game.get_contents
-    if @@contents["stick"] == 2 || (rand(3) == 0 && @@contents["pumpkin"] == 0) 
+    if @@contents["stick"] == 2 && @@contents["pumpkin"] == 1
+      @@contents["stick"] = 0
+      @@contents["pumpkin"] = 0
+    end
+    if @@contents["stick"] == 2 || (rand(3) == 0 && @@contents["pumpkin"] == 0)
       object = "pumpkin"
-      @@contents["pumpkin"] = 1
+      @@contents["pumpkin"] += 1
     else
       if @@contents["stick"] == 1
         object = "stick_2" 
@@ -13,7 +16,7 @@ module MontyhallHelper
       end
       @@contents["stick"] += 1
     end
-
+    
     something = Hash[name: name, image: "montyhall/door_#{rand(4)}.jpeg", contents: object]
     return something
   end

@@ -6,7 +6,8 @@
 <%= form_tag montyhall_choice_path do%>
   <%= hidden_field_tag("game", @game.id) %>
   <% @game.doors.each do |door| %>
-    <%= image_submit_tag(door.image, id: door.id) %>
+    <%= image_submit_tag(door.image, id: door.id, name: door.id, value: door.id) %>
+    <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
   <% end %> 
 <% end %>
 </div>
