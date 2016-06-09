@@ -7,13 +7,11 @@
     <% if door.id == @open_door.id %>
       <%= hidden_field_tag("open_door", door.id) %>
       <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
-      <%= door.contents %>
     <% else %>
       <%= image_tag(door.image, id: door.id) %>
       <% door.id == (@door_id.to_i) ? (lable = "keep") : (lable = "swap") %>
       <%= submit_tag(lable.camelize, id: lable) %>
       <%= hidden_field_tag("#{lable}_door", door.id) %>
-      <%= door.contents %>
     <% end %>
   <% end %> 
 <% end %>
