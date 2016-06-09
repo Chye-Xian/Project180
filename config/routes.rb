@@ -1,4 +1,6 @@
 Project180::Application.routes.draw do
+  resources :posts
+
   get "montyhall/index"
   post "montyhall/choice"
   post "montyhall/result"
