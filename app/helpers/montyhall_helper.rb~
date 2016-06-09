@@ -13,9 +13,7 @@ module MontyhallHelper
       end
       @@contents["stick"] += 1
     end
-##################################################################
-#################################################################
-##########Got to figure out why the sticks are jpg not jpeg
+
     something = Hash[name: name, image: "montyhall/door_#{rand(4)}.jpeg", contents: object]
     return something
   end
@@ -33,5 +31,9 @@ module MontyhallHelper
     else
       return door_list.at(0).contents == "pumpkin" ? door_list.at(1) : door_list.at(0)
     end
+  end
+
+  def is_picked_door(picked_door, other_door)
+    return picked_door == other_door
   end
 end

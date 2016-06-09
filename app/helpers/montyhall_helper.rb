@@ -32,4 +32,9 @@ module MontyhallHelper
       return door_list.at(0).contents == "pumpkin" ? door_list.at(1) : door_list.at(0)
     end
   end
+
+  def is_picked_door(picked_door, other_door)
+      other_door = other_door.chomp("_door").capitalize
+    return picked_door == other_door
+  end
 end

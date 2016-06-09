@@ -7,7 +7,7 @@
   <% case @door_set[door.id] %>
   <% when "keep_door", "swap_door"%>
     <%= "This is door_id #{door.id}, this is other #{params['commit']}" %>
-    <% if door.id == params["id"].to_i %>
+    <% if is_picked_door(params["commit"], @door_set[door.id]) %>
       <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
     <% else %>
       <%= image_submit_tag(door.image, id: door.id) %>

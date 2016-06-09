@@ -1,13 +1,11 @@
 <h1>Monty Hall problem</h1>
-<!-- got to find where the chosen door is at again !-->
 <div id ="intro">
-<p>This is what you have chosen<%= @result %>hopefully</p>
+<p>This is what you have chosen</p>
 <% @game.doors.each do |door| %>
   <%= @door_set[door.id] %>
   <% case @door_set[door.id] %>
   <% when "keep_door", "swap_door"%>
-    <%= "This is door_id #{door.id}, this is other #{params['id']}" %>
-    <% if door.id == params["id"].to_i %>
+    <% if is_picked_door(params["commit"], @door_set[door.id]) %>
       <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
     <% else %>
       <%= image_submit_tag(door.image, id: door.id) %>
