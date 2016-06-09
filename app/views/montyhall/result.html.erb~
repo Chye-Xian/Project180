@@ -1,3 +1,4 @@
+<div id="box">
 <h1>Monty Hall problem</h1>
 <div id ="intro">
 <p>This is what you have chosen</p>
@@ -15,4 +16,10 @@
     <%= image_tag("montyhall/#{door.contents}.jpg", id: door.id) %>
   <% end %>
 <% end %>
+</div>
+</nbsp>
+<div id="footer">
+<%= link_to 'Want to try it again?', montyhall_index_path %>
+<%= link_to 'Back to project list' %>
+</div>
 </div>

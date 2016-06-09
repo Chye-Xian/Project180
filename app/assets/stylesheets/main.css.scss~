@@ -9,7 +9,6 @@
    padding: 5px;
    margin: auto;
    text-align: center;
-   
 }
 
 #intro {
@@ -24,6 +23,25 @@
    margin: 2px;
 }
 
+#footer {
+   text-align: left;
+}
+
+a:link {
+   color: grey;
+   text-decoration: none;
+}
+
+a:hover {
+   color: white;
+   text-decoration: none;
+}
+
+a:visited {
+   color: grey;
+}
+
 #project-list {
-   background-color: #334444;
+   background-color: #536464;
+   text_align: left;
 }
